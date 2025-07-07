@@ -81,3 +81,42 @@ These are machines (physical, virtual, or even containers) that you provide and 
     * Needs careful security configuration as it executes code from your repository.
 
 ---
+
+# Example of Workflow.yml 
+
+```
+name: Hello World Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: echo "👋 Hello, World from GitHub Actions!"
+```
+
+**Breakdown**
+
+   ```name```: Name of the workflow.
+
+   ```on.push.branches```: Triggers this workflow when someone pushes to main.
+
+   ```jobs.say-hello```: Defines a job called say-hello.
+
+   ```runs-on```: Uses GitHub-hosted ubuntu-latest runner.
+
+   ```steps```: Each step runs one command or uses an action.
+
+   ```First step```checks out the code (optional but common).
+
+   ```Second step``` runs a shell command using run.
+
