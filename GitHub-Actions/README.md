@@ -1,5 +1,6 @@
 # Github Actions
-<img src="https://github.com/bhuvan-raj/Github-Actions/Github-Actions/blob/main/assets/cicd1.png" alt="Banner" />
+<img src="https://github.com/bhuvan-raj/Github-Actions/Github-Actions/assets/cicd1.png" alt="Banner" />
+GitHub-Actions/assets
 
 
 ## What is GitHub Actions?
