@@ -1,6 +1,6 @@
 # CI/CD
 
-<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/CI-CD/assets/cicd.png" alt="Banner" />
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/CI-CD/assets/cicd.png" alt="Banner" width="900" height="350" />
 
 
 
