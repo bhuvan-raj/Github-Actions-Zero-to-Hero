@@ -1,3 +1,9 @@
+# CI/CD
+
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/CI-CD/assets/cicd.png" alt="Banner" />
+
+
+
 ## What is CI/CD?
 
 CI/CD represents a methodology that bridges the gaps between development and operations teams by automating the building, testing, and deployment of applications. It aims to deliver high-quality software faster and more frequently.
