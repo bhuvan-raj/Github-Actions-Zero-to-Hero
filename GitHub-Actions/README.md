@@ -1,13 +1,6 @@
+# Github Actions
+<img src="https://github.com/bhuvan-raj/Github-Actions/Github-Actions/blob/main/assets/cicd1.png" alt="Banner" />
 
----
-
-# Understanding GitHub Actions: Workflows, Jobs, and Runners
-
-## Introduction
-
-In the world of modern software development, automation is key to efficiency and reliability. **GitHub Actions** is GitHub's built-in platform for automating tasks directly within your code repository. It allows you to define custom workflows that respond to events, helping you automate everything from testing and building code to deploying applications.
-
-This `README.md` will clarify the fundamental building blocks of GitHub Actions: the overall platform, the definition of a workflow, what constitutes a job, and the crucial role of runners.
 
 ## What is GitHub Actions?
 
