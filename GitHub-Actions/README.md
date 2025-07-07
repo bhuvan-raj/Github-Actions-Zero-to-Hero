@@ -1,5 +1,5 @@
 # Github Actions
-<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/Github-Actions/assets/cicd1.png" alt="Banner" />
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/GitHub-Actions/assets/cicd1.png" alt="Banner" />
 GitHub-Actions/assets
 
 
