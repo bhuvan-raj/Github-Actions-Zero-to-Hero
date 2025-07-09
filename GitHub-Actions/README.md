@@ -86,7 +86,7 @@ These are machines (physical, virtual, or even containers) that you provide and 
 
 GitHub Actions is a versatile automation platform built directly into GitHub, allowing you to automate nearly any aspect of your software development workflow. It extends far beyond traditional CI/CD to encompass a wide array of tasks. Here are its primary use cases:
 
-- 1. Continuous Integration (CI)
+ ### 1. Continuous Integration (CI)
 
 Automate the build, test, and analysis phases of your development process to ensure code quality and early bug detection.
 
@@ -95,7 +95,7 @@ Automate the build, test, and analysis phases of your development process to ens
 * **Code Linting & Formatting:** Enforce coding standards and maintain consistent code style.
 * **Static Code Analysis:** Run tools to identify potential bugs, security vulnerabilities, and quality issues.
 
-- 2. Continuous Delivery / Deployment (CD)
+### 2. Continuous Delivery / Deployment (CD)
 
 Streamline the process of getting your application from development to various environments.
 
@@ -103,7 +103,7 @@ Streamline the process of getting your application from development to various e
 * **Publishing Packages/Artifacts:** Automatically publish libraries, Docker images, or other build artifacts to registries (e.g., npm, PyPI, GitHub Packages, Docker Hub).
 * **Version Tagging & Releases:** Automate the creation of release tags, generation of release notes, and publishing of new releases on GitHub.
 
-- 3. Project Management & Automation
+### 3. Project Management & Automation
 
 Automate common repository management tasks to improve efficiency and collaboration.
 
@@ -115,7 +115,7 @@ Automate common repository management tasks to improve efficiency and collaborat
 * **Notifications:** Send alerts to Slack, Microsoft Teams, Discord, or email regarding workflow status, new issues, or other events.
 * **Scheduled Tasks:** Run jobs at predefined intervals (e.g., daily cleanups, nightly reports, recurring data synchronization).
 
-- 4. Code Quality & Security
+### 4. Code Quality & Security
 
 Integrate checks and scans directly into your workflow to enhance code robustness and security posture.
 
@@ -123,14 +123,14 @@ Integrate checks and scans directly into your workflow to enhance code robustnes
 * **Dependency Scanning:** Scan for known vulnerabilities in your project's third-party dependencies.
 * **Secret Management:** Securely manage and inject sensitive information (API keys, tokens) into your workflows using GitHub Secrets.
 
-- 5. Infrastructure as Code (IaC) & Cloud Operations
+### 5. Infrastructure as Code (IaC) & Cloud Operations
 
 Orchestrate cloud resource provisioning and management directly from your repository.
 
 * **Terraform/Pulumi Automation:** Automate the deployment and management of infrastructure definitions.
 * **Cloud Deployments:** Deploy applications and services to major cloud providers (AWS, Azure, Google Cloud, Kubernetes).
 
-- 6. Miscellaneous & Custom Workflows
+### 6. Miscellaneous & Custom Workflows
 
 Beyond the core CI/CD, GitHub Actions enables a vast array of custom automations.
 
