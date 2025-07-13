@@ -54,16 +54,17 @@ To get a local copy up and running follow these simple steps.
 
 Here are some commonly used Maven commands:
 
-  * **`./mvnw clean`**: Cleans the project by deleting the `target` directory. This removes all compiled classes, test results, and packaged artifacts.
-  * **`./mvnw compile`**: Compiles the source code of the project.
-  * **`./mvnw test`**: Compiles the test source code and runs the unit tests.
-  * **`./mvnw package`**: Compiles, tests, and packages the compiled code into a distributable format (e.g., JAR, WAR). The output is placed in the `target` directory.
-  * **`./mvnw verify`**: Runs all checks to ensure the package is valid and meets quality criteria. This often includes running integration tests.
-  * **`./mvnw install`**: Performs `package` and then installs the packaged artifact into the local Maven repository (usually `~/.m2/repository`). This makes the artifact available to other local projects.
-  * **`./mvnw deploy`**: Performs `install` and then copies the final package to a remote repository for sharing with other developers and projects. (Requires proper repository configuration in `pom.xml`).
-  * **`./mvnw site`**: Generates a project website based on the project's POM.
-  * **`./mvnw dependency:tree`**: Displays the project's dependency tree, showing all direct and transitive dependencies.
-  * **`./mvnw help:effective-pom`**: Displays the effective POM, which is the final POM after all inheritance and profiles have been applied.
+| Command               | Description                               |
+| --------------------- | ----------------------------------------- |
+| `mvn compile`         | Compiles the source code                  |
+| `mvn clean`           | Deletes `target/` directory (clean build) |
+| `mvn test`            | Runs unit tests                           |
+| `mvn package`         | Packages code into a JAR/WAR file         |
+| `mvn install`         | Installs the built artifact to local repo |
+| `mvn site`            | Generates documentation site              |
+| `mvn dependency:tree` | Shows project dependency tree             |
+
+
 
 ##  Most common used maven cmd to do a clean install
 
