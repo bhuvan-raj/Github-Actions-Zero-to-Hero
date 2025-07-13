@@ -1,8 +1,4 @@
-You want a README file for these study notes on testing in Continuous Integration. Great idea\! A README will make these notes easily digestible and presentable.
-
-Here's a README file, structured to be clear, engaging, and informative for your students:
-
------
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/Tests%20in%20CI/assets/tests.png" alt="Banner" />
 
 # 📚 Comprehensive Study Notes: Automated Testing in Continuous Integration (CI)
 
@@ -162,5 +158,3 @@ This table provides a high-level overview of common tools. Many are language-agn
   * **Quality and Security are Everyone's Responsibility:** Good testing practices, including security, are fundamental to being a great developer.
 
 -----
-
-Feel free to explore these concepts further and integrate them into your development practices. Happy testing\!
