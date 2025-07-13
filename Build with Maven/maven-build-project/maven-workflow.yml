@@ -11,7 +11,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Compile and package
+    - name: Validate the syntax
+      run: mvn validate
+
+    - name: Do a clean Package and install
       run: mvn clean install
       
     - name: List the build artifact
