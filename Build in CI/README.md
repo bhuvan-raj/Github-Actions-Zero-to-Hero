@@ -1,8 +1,7 @@
-Absolutely! Here's that in-depth study note on the build phase in CI, formatted as a README file for easy understanding and presentation.
-
----
 
 # 🛠️ Comprehensive Study Notes: The Build Phase in Continuous Integration (CI)
+
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/Build%20in%20CI/assets/build.png" alt="Banner" />
 
 Welcome to this detailed guide on the **"Build Phase"** within a Continuous Integration (CI) pipeline! This is a critical stage where your raw source code transforms into a runnable application.
 
