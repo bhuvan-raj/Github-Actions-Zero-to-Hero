@@ -26,10 +26,10 @@ Whether you're a beginner or a DevOps practitioner, GitHub Actions makes automat
 
 | Folder | Description |
 |--------|-------------|
-| [`ci-cd`](./CI-CD/) | Concepts of Continuous Integration and Continuous Delivery/Deployment. |
-| [`github-actions-introduction`](./Github-Actions/) | Basic introduction and how GitHub Actions works behind the scenes. |
-| [`test-in-ci`](./Test-in-CI/) | Different types of testing (unit, integration, linting) in CI workflows. |
-| [`build-in-ci`](./Build-in-CI/) | Automating build steps using GitHub Actions for different projects. |
+| [**ci-cd**](./CI-CD/) | Concepts of Continuous Integration and Continuous Delivery/Deployment. |
+| [**Introduction**](./GitHub-Actions/) | Basic introduction and how GitHub Actions works behind the scenes. |
+| [**Test-in-CI**](./Test%20in%20CI/) | Different types of testing (unit, integration, linting) in CI workflows. |
+| [**Build-in-CI**](./Build%20in%20CI/) | Automating build steps using GitHub Actions for different projects. |
 
 ---
 
