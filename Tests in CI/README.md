@@ -1,6 +1,9 @@
+# 📚 Comprehensive Study Notes: Automated Testing in Continuous Integration (CI)
+
+
 <img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/Tests%20in%20CI/assets/test.png" alt="Banner" />
 
-# 📚 Comprehensive Study Notes: Automated Testing in Continuous Integration (CI)
+
 
 Welcome to these in-depth study notes on automated testing within a Continuous Integration (CI) pipeline\! This guide is designed to provide a clear and thorough understanding of different testing types, their importance, and the tools used, including crucial security testing aspects.
 
