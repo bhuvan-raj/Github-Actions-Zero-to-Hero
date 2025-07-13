@@ -23,7 +23,7 @@ This repository demonstrates how to build a simple Java application using **Apac
 
 ## What is Maven?
 
-Apache Maven is a software project management and comprehension tool. Based on the concept of a Project Object Model (POM), Maven can manage a project's build, reporting, and documentation from a central piece of information.
+Apache Maven is a build tool made for java programming language. Based on the concept of a Project Object Model (POM), Maven can manage a project's build, reporting, and documentation from a central piece of information.
 
 **Apache Maven** is a build tool that helps developers:
 - Manage project dependencies (JAR files).
