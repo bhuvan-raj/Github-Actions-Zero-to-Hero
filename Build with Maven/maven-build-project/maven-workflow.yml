@@ -12,4 +12,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Compile and package
-      run: mvn clean package
+      run: mvn clean install
+      
+    - name: List the build artifact
+      run: ls /target
