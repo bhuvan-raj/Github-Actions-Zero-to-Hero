@@ -1,4 +1,4 @@
-<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/Tests%20in%20CI/assets/tests.png" alt="Banner" />
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/Tests%20in%20CI/assets/test.png" alt="Banner" />
 
 # 📚 Comprehensive Study Notes: Automated Testing in Continuous Integration (CI)
 
