@@ -1,8 +1,9 @@
-Here's a `README.md` file template for a Maven-based project, incorporating the requested sections. Remember to replace placeholders like `[Project Name]`, `[Your Project Description]`, etc., with your actual project details.
 
------
 
-# [Project Name]
+# Build with Maven
+
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/Build%20with%20Maven/assets/maven.png" alt="Banner" />
+
 
 ## Table of Contents
 
@@ -18,14 +19,18 @@ Here's a `README.md` file template for a Maven-based project, incorporating the 
   * [Contact](https://www.google.com/search?q=%23contact)
 
 ## About
-
-[Your Project Description]
-
-This project is built and managed using Apache Maven, a powerful build automation tool.
+This repository demonstrates how to build a simple Java application using **Apache Maven**, a powerful build automation tool used primarily for Java projects. It also explains how to configure Maven on self-hosted runners for CI/CD pipelines (like GitHub Actions).
 
 ## What is Maven?
 
 Apache Maven is a software project management and comprehension tool. Based on the concept of a Project Object Model (POM), Maven can manage a project's build, reporting, and documentation from a central piece of information.
+
+**Apache Maven** is a build tool that helps developers:
+- Manage project dependencies (JAR files).
+- Compile, test, and package Java applications.
+- Standardize build processes across teams.
+- Automate tasks like running tests, generating reports, and deploying builds.
+
 
 Key features of Maven include:
 
@@ -39,35 +44,11 @@ Key features of Maven include:
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
+### Prerequisites to Download Maven on a server
 
   * **Java Development Kit (JDK):** Maven requires a JDK to be installed. Ensure you have JDK 8 or higher. You can download it from the [Oracle Website](https://www.oracle.com/java/technologies/downloads/) or use OpenJDK distributions like [Adoptium](https://adoptium.net/).
   * **Apache Maven:** While not strictly necessary for building if you just use the wrapper, it's good to have a local installation for general development. See the "Installing Maven on a Self-Hosted Runner" section for instructions.
 
-### Building the Project
-
-This project uses the Maven Wrapper (`mvnw` or `mvnw.cmd`), which means you don't need a global Maven installation to build the project. The wrapper automatically downloads the correct Maven version for the project.
-
-To build the project:
-
-1.  **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/[Your_Username]/[your-project-name].git
-    cd [your-project-name]
-    ```
-
-2.  **Build the project:**
-
-    ```bash
-    # For Linux/macOS
-    ./mvnw clean install
-
-    # For Windows
-    .\mvnw.cmd clean install
-    ```
-
-    This command will compile the source code, run tests, and package the project into a JAR/WAR file (or whatever your project's packaging type is). The resulting artifact will typically be found in the `target/` directory.
 
 ### Important Maven Commands
 
@@ -83,6 +64,12 @@ Here are some commonly used Maven commands:
   * **`./mvnw site`**: Generates a project website based on the project's POM.
   * **`./mvnw dependency:tree`**: Displays the project's dependency tree, showing all direct and transitive dependencies.
   * **`./mvnw help:effective-pom`**: Displays the effective POM, which is the final POM after all inheritance and profiles have been applied.
+
+##  Most common used maven cmd to do a clean install
+
+```
+mvn clean install
+```
 
 ## Installing Maven on a Self-Hosted Runner
 
@@ -179,14 +166,6 @@ Here's a general guide for Linux-based runners (adjust paths and commands for Wi
 
 ## License
 
-[Your Project's License, e.g., MIT, Apache 2.0, GPL]
-
-See the `LICENSE` file for more details.
-
-## Contact
-
-[Your Name/Organization Name] - [Your Email/Contact Information]
-
-Project Link: [Your Project Repository URL]
+See the [**LICENSE**](./LICENSE) file for more details.
 
 -----
