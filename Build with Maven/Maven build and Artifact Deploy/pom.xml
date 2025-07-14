@@ -13,8 +13,8 @@
 
   <distributionManagement>
     <repository>
-      <id>bubu-afk</id>
-      <url>https://maven.pkg.github.com/bubu-afk/TEST-MAVEN</url>
+      <id>user-name</id>
+      <url>https://maven.pkg.github.com/username/RepoName</url>
     </repository>
   </distributionManagement>
 </project>
