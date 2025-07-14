@@ -98,7 +98,3 @@ Also update your `settings.xml` with GitHub credentials (like deployment).
 * GitHub Packages requires authentication for both read/write operations
 
 ---
----
-
-Let me know if you'd like a version of this with **badges**, **images**, or **project setup screenshots** to make it more interactive for students!
-```
