@@ -31,6 +31,8 @@ Whether you're a beginner or a DevOps practitioner, GitHub Actions makes automat
 | [**Tests-in-CI**](./Tests%20in%20CI/) | Different types of testing (unit, integration, linting) in CI workflows. |
 | [**Build-in-CI**](./Build%20in%20CI/) | Automating build steps using GitHub Actions for different projects. |
 | [**Build-with-Maven**](./Build%20with%20Maven/) | Build and Deploy the java using apache Maven.Two hands-on lab provided |
+| [**Creating-Self-Hosted-Runners**](./Self%20hosted%20Runner/) | Creating and configuring a self hosted runner using ec2 |
+
 
 
 ---
