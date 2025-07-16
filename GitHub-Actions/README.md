@@ -178,3 +178,70 @@ jobs:
 
    ```Second step``` runs a shell command using run.
 
+
+**Event-Driven Triggers**
+
+These are the most common triggers, activated by activities within your GitHub repository.
+
+`push`
+Triggers the workflow when code is pushed to the repository. This is fundamental for continuous integration, where you want to build and test your code with every new commit.
+
+**Filtering**: You can filter push events by:
+
+`branches`: Specify particular branches (e.g., main, feature/*) to trigger on. You can also use `!branches` to ignore specific branches.
+tags: Trigger on pushes to specific tags (e.g., v1.*). `!tags` can be used to ignore certain tags.
+
+`paths`: Trigger only when changes occur in specific file paths (e.g., src/**, !docs/**). This is great for monorepos or for workflows that only care about certain parts of the codebase.
+
+`pull_request`
+Triggers the workflow when a pull request (PR) is opened, synchronized (new commits pushed to the PR branch), reopened, or ready for review (if marked as draft). This is ideal for running pre-merge checks like linting, unit tests, and integration tests
+
+`workflow_run`
+Triggers a workflow when another specified workflow completes (succeeds, fails, or is canceled). This is powerful for chaining workflows, allowing one workflow to act as a precursor for another.
+
+`workflows`: Specify the names of the workflows that, upon completion, should trigger this workflow.
+
+`types`: Filter based on the completion status of the preceding workflow (completed, requested).
+
+`branches`: Filter based on the branch the triggering workflow ran on.
+
+`issues`
+Triggers the workflow when an issue activity occurs.
+`types`: opened, edited, deleted, transferred, pinned, unpinned, milestoned, demilestoned, labeled, unlabeled, locked, unlocked, reopened.
+
+`release`
+Triggers when a release is published, unpublished, created, edited, or deleted. Ideal for automating deployment processes tied to official releases.
+
+Other Common Event Triggers:
+
+`create`: Triggers when a branch or tag is created.
+
+`delete`: Triggers when a branch or tag is deleted.
+
+`fork`: Triggers when a repository is forked.
+
+`watch`: Triggers when a user stars a repository.
+
+`star`: (Alias for watch event)
+
+`status`: Triggers when a Git commit status is updated.
+
+`label`: Triggers when a label is created, edited, or deleted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
