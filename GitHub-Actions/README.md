@@ -179,7 +179,7 @@ jobs:
    ```Second step``` runs a shell command using run.
 
 
-**Event-Driven Triggers**
+## **Event-Driven Triggers**
 
 These are the most common triggers, activated by activities within your GitHub repository.
 
