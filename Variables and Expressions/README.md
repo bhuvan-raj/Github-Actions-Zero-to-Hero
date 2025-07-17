@@ -1,9 +1,4 @@
-Here you go Bubu — a complete `README.md` file formatted for your GitHub repository, covering **GitHub Actions: Variables and Expressions (3.1)**:
-
----
-
-````markdown
-# 🔧 GitHub Actions: Variables and Expressions (3.1)
+# 🔧 GitHub Actions: Variables and Expressions
 
 This guide explains how to use **environment variables** and **expressions** in GitHub Actions, and how to access different **context objects** like `github`, `runner`, `job`, and `steps`.
 
@@ -162,17 +157,6 @@ jobs:
 | `runner.*` | Runner details (OS, name, arch)           |
 | `job.*`    | Job-level metadata (status)               |
 | `steps.*`  | Share outputs between steps               |
-
----
-
-## 🧪 Practice Idea
-
-Try creating a GitHub Action that prints:
-
-* Who triggered the workflow
-* The branch name
-* The current date and time
-* The OS of the runner
 
 ---
 
