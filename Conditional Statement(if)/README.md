@@ -1,5 +1,8 @@
 # GitHub Actions Conditional Execution: A Study Guide 🚦
 
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/Conditional%20Statement(if)/assets/if.png" alt="Banner" />
+
+
 This document provides a detailed study guide on using `if` conditions in GitHub Actions workflows. The `if` keyword is fundamental for controlling the execution flow of your automation, allowing you to define "if-then" rules that ensure specific steps or jobs run only when certain criteria are met. This capability makes your CI/CD pipelines significantly more efficient, intelligent, and robust.
 
 -----
