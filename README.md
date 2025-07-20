@@ -33,7 +33,7 @@ Whether you're a beginner or a DevOps practitioner, GitHub Actions makes automat
 | [**Build-with-Maven**](./Build%20with%20Maven/) | Build and Deploy the java using apache Maven.Two hands-on lab provided |
 | [**Creating-Self-Hosted-Runners**](./Self%20hosted%20Runner/) | Creating and configuring a self hosted runner using ec2 |
 | [**Variables-and-Expressions**](./Variables%20and%20Expressions/) | Creating Variables and Expressions, How to call them.|
-| [**Conditional Statement**](./Conditional%20Statements(if)/) | Introduction to conditional statements (if) and implementation in pipeline|
+| [**Conditional Statement**](./Conditional%20Statement(if)/) | Introduction to conditional statements (if) and implementation in pipeline|
 
 
 
