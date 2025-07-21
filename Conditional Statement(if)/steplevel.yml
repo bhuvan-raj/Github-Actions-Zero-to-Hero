@@ -1,0 +1,42 @@
+
+name: Simple Maven Build
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Or 'windows-latest' if you prefer to test Windows only
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Perform Maven Build
+        run: mvn clean install -B # -B for batch mode, less verbose output
+
+      - name: List Package (Linux/macOS) 🐧
+        # This step will run if the runner is Linux or macOS.
+        # On 'ubuntu-latest', this condition will always be true.
+        if: ${{ runner.os == 'Linux' || runner.os == 'macOS' }}
+        run: ls -l target/
+
+      - name: List Package (Windows) 🖥️
+        # This step will run if the runner is Windows.
+        # If runs-on is 'ubuntu-latest', this condition will always be false.
+        if: ${{ runner.os == 'Windows' }}
+        run: dir target\
+        shell: cmd
+
+      - name: Build Success Message 🎉
+        # This step runs only if the 'Perform Maven Build' step was successful.
+        if: ${{ success() }}
+        run: echo "Maven build completed successfully on ${{ runner.os }}!"
+
+      - name: Build Failure Message ❌
+        # This step runs only if the 'Perform Maven Build' step failed.
+        if: ${{ failure() }}
+        run: echo "Maven build failed on ${{ runner.os }}. Please check logs!"
