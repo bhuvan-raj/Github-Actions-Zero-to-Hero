@@ -5,23 +5,24 @@
 
 This project demonstrates how to integrate **SonarQube** for continuous code quality inspection into a **GitHub Actions** workflow. By the end of this lab, you'll understand the importance of code quality, how to set up a local SonarQube instance, tunnel it for public access, and automate code analysis in your CI/CD pipeline.
 
-## Table of Contents
+## 📚 Table of Contents
 
-1.  [What is Software Testing?](https://www.google.com/search?q=%23what-is-software-testing)
-2.  [Why Do We Need Software Testing?](https://www.google.com/search?q=%23why-do-we-need-software-testing)
-3.  [Major Software Testing Tools](https://www.google.com/search?q=%23major-software-testing-tools)
-4.  [What is SonarQube?](https://www.google.com/search?q=%23what-is-sonarqube)
-5.  [Why SonarQube?](https://www.google.com/search?q=%23why-sonarqube)
-6.  [Project Setup and Lab Steps](https://www.google.com/search?q=%23project-setup-and-lab-steps)
-      * [Step 1: Set up Local SonarQube with Docker](https://www.google.com/search?q=%23step-1-set-up-local-sonarqube-with-docker)
-      * [Step 2: Tunnel SonarQube with Ngrok](https://www.google.com/search?q=%23step-2-tunnel-sonarqube-with-ngrok)
-      * [Step 3: Create a Project in SonarQube](https://www.google.com/search?q=%23step-3-create-a-project-in-sonarqube)
-      * [Step 4: Configure GitHub Secrets](https://www.google.com/search?q=%23step-4-configure-github-secrets)
-      * [Step 5: Create GitHub Actions Workflow](https://www.google.com/search?q=%23step-5-create-github-actions-workflow)
-      * [Step 6: Trigger Scan and View Results](https://www.google.com/search?q=%23step-6-trigger-scan-and-view-results)
-7.  [Conclusion](https://www.google.com/search?q=%23conclusion)
+1. [What is Software Testing?](#what-is-software-testing)
+2. [Why Do We Need Software Testing?](#why-do-we-need-software-testing)
+3. [Major Software Testing Tools](#major-software-testing-tools)
+4. [What is SonarQube?](#what-is-sonarqube)
+5. [Why SonarQube?](#why-sonarqube)
+6. [Project Setup and Lab Steps](#project-setup-and-lab-steps)
+   6.1 [Prerequisites](#prerequisites)
+   6.2 [Step 1: Set up Local SonarQube with Docker](#step-1-set-up-local-sonarqube-with-docker)
+   6.3 [Step 2: Tunnel SonarQube with Ngrok](#step-2-tunnel-sonarqube-with-ngrok)
+   6.4 [Step 3: Create a Project in SonarQube](#step-3-create-a-project-in-sonarqube)
+   6.5 [Step 4: Configure GitHub Secrets](#step-4-configure-github-secrets)
+   6.6 [Step 5: Create GitHub Actions Workflow](#step-5-create-github-actions-workflow)
+   6.7 [Step 6: Trigger Scan and View Results](#step-6-trigger-scan-and-view-results)
+7. [Conclusion](#conclusion)
 
------
+
 
 ## What is Software Testing?
 
