@@ -1,8 +1,7 @@
-Here's a README file for your lab, incorporating all your requirements and the successful workflow you've established.
-
------
-
 # Code Quality Assurance with SonarQube and GitHub Actions 🧪
+
+
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/Testing%20using%20SONARQUBE/assets/testing.png" alt="Banner" />
 
 This project demonstrates how to integrate **SonarQube** for continuous code quality inspection into a **GitHub Actions** workflow. By the end of this lab, you'll understand the importance of code quality, how to set up a local SonarQube instance, tunnel it for public access, and automate code analysis in your CI/CD pipeline.
 
