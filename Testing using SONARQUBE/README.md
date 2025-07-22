@@ -67,6 +67,9 @@ The world of software testing is vast, with many tools specializing in different
 
 ## What is SonarQube?
 
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/Testing%20using%20SONARQUBE/assets/sq.webp" alt="Banner" />
+
+
 **SonarQube** is an **open-source platform** developed by SonarSource for **continuous inspection of code quality and security**. It performs **static analysis** of your code to detect bugs, vulnerabilities, code smells, duplication, and adherence to coding standards across various programming languages. Essentially, it acts as a "spell checker" and "grammar checker" for your code, helping you identify and fix issues *before* they become costly problems.
 
 -----
