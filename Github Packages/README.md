@@ -1,6 +1,9 @@
 
 # GitHub Packages & GitHub Actions Integration
 
+
+<img src="https://github.com/bhuvan-raj/Github-Actions/blob/main/GithuB%20Packages/assets/gh.webp" alt="Banner" />
+
 This in-depth README covers **GitHub Packages**, its **integration with GitHub Actions**, and why it's a valuable tool for modern software development workflows. Ideal for students learning CI/CD.
 
 ---
