@@ -36,6 +36,7 @@ Whether you're a beginner or a DevOps practitioner, GitHub Actions makes automat
 | [**Conditional Statement**](./Conditional%20Statement(if)/) | Introduction to conditional statements (if) and implementation in pipeline|
 | [**SES FOR MAIL**](./AWS%20SES%20Integration/) | How to setup mail notifications using amazon SES and Conditional statements|
 | [**SonarQUBE Integretion**](./Testing%20using%20SONARQUBE/) | Integreting static code analysis tool (SonarQube) and testing maven codes|
+| [**Github Registry**](./Github%20Registry/) | A inbuilt and repository integrated store location to store Packages,artifacts etc|
 
 
 
