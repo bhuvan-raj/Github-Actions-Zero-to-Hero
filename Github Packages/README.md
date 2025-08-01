@@ -190,8 +190,3 @@ Teaching GitHub Packages with GitHub Actions equips students to:
 > 📘 **Skill Outcomes**: CI/CD, package management, GitHub Actions proficiency, security, artifact versioning.
 
 ---
-
-```
-
-Let me know if you want this saved as a downloadable file or tailored to a specific language (e.g., Java/Maven, Docker, etc.), Bubu!
-```
