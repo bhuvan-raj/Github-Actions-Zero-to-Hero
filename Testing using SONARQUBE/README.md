@@ -193,73 +193,8 @@ To securely provide your SonarQube host URL and token to your GitHub Actions wor
 
 ### Step 5: Create GitHub Actions Workflow
 
-Now, let's add the workflow file to your Java project's repository.
-
-1.  In your GitHub repository, create a new file at `.github/workflows/sonar-scan.yml`.
-
-2.  Paste the following content into the file:
-
-    ```yaml
-    name: Build and Analyze with SonarQube
-
-    on:
-      push:
-        branches:
-          - main # Trigger on pushes to the main branch
-      pull_request:
-        types: [opened, synchronize, reopened] # Trigger on PR creation, updates, and reopens
-
-    jobs:
-      build:
-        name: Build and analyze
-        runs-on: ubuntu-latest # Uses a Ubuntu virtual machine hosted by GitHub
-
-        steps:
-          - uses: actions/checkout@v4
-            with:
-              fetch-depth: 0 # Mandatory to get a complete history for SonarQube analysis
-
-          - name: Set up JDK 17
-            uses: actions/setup-java@v4
-            with:
-              java-version: 17
-              distribution: 'zulu' # A common, open-source JDK distribution
-              cache: 'maven' # Caches Maven dependencies for faster builds
-
-          - name: Cache SonarQube packages
-            uses: actions/cache@v4
-            with:
-              path: ~/.sonar/cache
-              key: ${{ runner.os }}-sonar
-              restore-keys: ${{ runner.os }}-sonar
-
-          - name: Cache Maven packages
-            uses: actions/cache@v4
-            with:
-              path: ~/.m2
-              key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-              restore-keys: ${{ runner.os }}-m2
-
-          - name: Build and analyze
-            env:
-              SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-              SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically provided by GitHub for PR decoration
-            run: |
-              # This command runs the Maven build lifecycle (verify) and then the SonarQube analysis.
-              # -B: Batch mode, less verbose output, good for CI.
-              # -Dsonar.projectKey: Unique identifier for your project in SonarQube.
-              # -Dsonar.projectName: Display name in SonarQube.
-              # For Pull Request analysis, additional properties are passed using GitHub's context.
-              mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-                -Dsonar.projectKey=github-actions \ # Replace with your chosen project key from Step 3
-                -Dsonar.projectName='GitHub Actions Demo' \ # Replace with your chosen project name from Step 3
-                -Dsonar.pullrequest.key=${{ github.event.pull_request.number }} \
-                -Dsonar.pullrequest.branch=${{ github.head_ref }} \
-                -Dsonar.pullrequest.base=${{ github.base_ref }} \
-                -Dsonar.pullrequest.github.repository=${{ github.repository }} \
-                -Dsonar.pullrequest.github.oauth_token=${{ secrets.GITHUB_TOKEN }}
-    ```
+- Get inside the sonarqube, Go to your project- scroll down and click on maven - click on Github Action template
+- Copy the listed Yaml manifest and paste it on .github/workflows/test.yml
 
 3.  **Commit this file** to your repository.
 
