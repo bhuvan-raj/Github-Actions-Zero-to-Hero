@@ -195,9 +195,7 @@ To securely provide your SonarQube host URL and token to your GitHub Actions wor
 
 - Get inside the sonarqube, Go to your project- scroll down and click on maven - click on Github Action template
 - Copy the listed Yaml manifest and paste it on .github/workflows/test.yml
-
-3.  **Commit this file** to your repository.
-
+- **Commit this file** to your repository.
 -----
 
 ### Step 6: Trigger Scan and View Results
