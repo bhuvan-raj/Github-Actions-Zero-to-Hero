@@ -1,20 +1,4 @@
-You got it\! Here's a generalized `README.md` for a custom GitHub Action, emphasizing importance, use cases, and providing your `who` and `date` example as a clear demonstration.
-
------
-
-# 🚀 Building Custom GitHub Actions
-
-This README serves as a guide to understanding the importance and utility of creating your own custom GitHub Actions, complete with a practical example.
-
------
-
-## 🎯 What are GitHub Actions?
-
-GitHub Actions is a powerful **CI/CD platform** that allows you to automate tasks directly within your GitHub repositories. You can write individual tasks, called **actions**, and combine them to create custom workflows. These workflows can be triggered by various GitHub events, such as pushing code, creating a pull request, or even on a schedule.
-
------
-
-## ✨ Importance of Custom Actions
+# ✨ Importance of Custom Actions
 
 Creating custom GitHub Actions provides significant benefits for your development workflow:
 
