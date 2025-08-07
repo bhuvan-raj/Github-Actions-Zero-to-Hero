@@ -37,6 +37,7 @@ Whether you're a beginner or a DevOps practitioner, GitHub Actions makes automat
 | [**SES FOR MAIL**](./AWS%20SES%20Integration/) | How to setup mail notifications using amazon SES and Conditional statements|
 | [**SonarQUBE Integretion**](./Testing%20using%20SONARQUBE/) | Integreting static code analysis tool (SonarQube) and testing maven codes|
 | [**Github Packages**](./Github%20Packages/) | A inbuilt and repository integrated store location to store Packages,artifacts etc|
+| [**Custom Actions**](./Custom-Actions/) |  Creation of custom Github Actions and Reusing it in workflow.yml|
 
 
 
