@@ -1,0 +1,21 @@
+name: demo ci
+on:
+  workflow_dispatch:
+
+env:
+ name: bhuvan
+
+jobs:
+ first-job:
+  runs-on: ubuntu-latest
+  steps:
+   - name: first step
+     run: echo "hi , hello i am $name"
+ second-job:
+   runs-on: ubuntu-latest
+   env:
+    job: jobless
+   steps:
+     - name: first  step
+       run: echo "hi, i am $name and i am $job"
+     
