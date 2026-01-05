@@ -61,132 +61,239 @@ Each supported package type has its own **registry endpoint**. You authenticate 
 - **Permissions**: Inherited from repository or user/org
 - **Versions**: Fully supported with semantic versioning
 
----
+# LAB MANUAL
 
-## 🔁 GitHub Packages + GitHub Actions = ❤️
-
-Use GitHub Actions to build, test, publish, and consume packages.
-
-### 🔁 Example Workflow Steps
-
-1. **Checkout Code**  
-   `actions/checkout@v4`
-
-2. **Setup Runtime**  
-   `actions/setup-node`, `actions/setup-java`, etc.
-
-3. **Authentication**
-   - Use `GITHUB_TOKEN` for same-repo or public access
-   - Use PAT (stored in GitHub Secrets) for cross-repo or private access
-
-4. **Build & Test**
-   Run commands like `npm ci`, `mvn install`, etc.
-
-5. **Publish**
-   Use your package manager’s `publish` or `deploy` command
+## CI/CD Pipeline to Build and Publish Java JAR to GitHub Packages using Maven & GitHub Actions
 
 ---
 
-## 📄 Example: Publish npm Package
+## 1. Lab Objective
+
+To implement a CI/CD pipeline that:
+
+* Builds a Java application using Maven
+* Packages it as a JAR
+* Publishes the JAR to **GitHub Packages (Maven Registry)**
+* Uses **GitHub Actions with secure authentication**
+
+---
+
+## 2. Tools & Technologies
+
+* Java 17
+* Apache Maven
+* GitHub Actions
+* GitHub Packages (Maven)
+* Ubuntu GitHub-hosted Runner
+
+---
+
+## 3. Repository Structure (New)
+
+```
+java-github-packages-demo/
+├── .github/
+│   └── workflows/
+│       └── maven-publish.yml
+├── src/
+│   └── main/
+│       └── java/
+│           └── org/
+│               └── demo/
+│                   └── MainApp.java
+├── pom.xml
+├── settings.xml
+└── README.md
+```
+
+---
+
+## 4. Java Application Source Code
+
+### `MainApp.java`
+
+```java
+package org.demo;
+
+public class MainApp {
+
+    public static void main(String[] args) {
+        System.out.println("CI/CD pipeline executed successfully. Artifact published to GitHub Packages.");
+    }
+}
+```
+
+---
+
+## 5. Maven Project Configuration
+
+### `pom.xml`
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.demo</groupId>
+    <artifactId>java-github-packages-demo</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Java GitHub Packages Demo</name>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <!-- GitHub Packages Deployment Configuration -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/<GITHUB_OWNER>/<REPOSITORY_NAME></url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <!-- Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+
+            <!-- JAR Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.demo.MainApp</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+```
+
+🔹 Replace:
+
+```
+<GITHUB_OWNER>/<REPOSITORY_NAME>
+```
+
+Example:
+
+```
+https://maven.pkg.github.com/Bubu/java-github-packages-demo
+```
+
+---
+
+## 6. Maven Authentication Configuration
+
+### `settings.xml`
+
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+          https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers>
+        <server>
+            <id>github</id>
+            <username>${env.GITHUB_ACTOR}</username>
+            <password>${env.GITHUB_TOKEN}</password>
+        </server>
+    </servers>
+
+</settings>
+```
+
+🔹 `id` **must exactly match** the `distributionManagement` repository ID.
+
+---
+
+## 7. GitHub Actions Workflow
+
+### `.github/workflows/maven-publish.yml`
 
 ```yaml
-name: Publish Node.js Package to GitHub Packages
+name: Build and Publish Maven Package
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
-  build-and-publish:
+  publish:
     runs-on: ubuntu-latest
+
     permissions:
       contents: read
       packages: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
         with:
-          node-version: '20'
-          registry-url: 'https://npm.pkg.github.com'
+          distribution: temurin
+          java-version: 17
+          cache: maven
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build package
-        run: npm run build
-
-      - name: Publish package to GitHub Packages
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-````
+      - name: Build and Publish JAR
+        run: mvn clean deploy --settings settings.xml
+```
 
 ---
 
-## 📥 Consuming Packages in Actions
+## 8. CI/CD Execution Flow
 
-To consume a GitHub Package:
+1. Developer pushes code to the `main` branch
+2. GitHub Actions workflow is triggered
+3. Runner installs Java and Maven
+4. Maven lifecycle executes:
 
-* Set the registry in your config (`.npmrc`, `.m2/settings.xml`, etc.)
-* Authenticate using `GITHUB_TOKEN` or PAT
-
----
-
-## 🔐 Security Best Practices
-
-1. **Least Privilege**
-   Scope tokens to only `read:packages` or `write:packages`.
-
-2. **Use GitHub Secrets**
-   Never hardcode PATs. Always use secrets.
-
-3. **Token Rotation**
-   Rotate PATs regularly.
-
-4. **Log Masking**
-   Use `::add-mask::VALUE` to hide secrets in logs.
-
-5. **Security Scans**
-   Use Dependabot and secret scanning.
-
-6. **Branch Protection**
-   Protect branches that trigger publishing workflows.
+   * `compile`
+   * `package`
+   * `deploy`
+5. JAR is uploaded to **GitHub Packages Maven Registry**
 
 ---
 
-## 💰 Pricing
+## 9. Artifact Verification
 
-| Type                 | Cost                                                   |
-| -------------------- | ------------------------------------------------------ |
-| Public Repositories  | **Free**                                               |
-| Private Repositories | Limited free tier (e.g., 500MB storage, 1GB bandwidth) |
+* Navigate to your GitHub repository
+* Open **Packages** section
+* You will see:
 
-> ⚠️ Bandwidth used by GitHub Actions is **free**, even for private packages.
-
----
-
-## 🛠️ Use Cases
-
-* **Internal Package Hosting**: Share libraries across internal projects
-* **CI/CD Artifact Management**: Store release builds, deployable artifacts
-* **Dependency Caching**: Faster builds with internal mirrors
-* **Release Automation**: Automate version publishing on release
-* **Docker Image Hosting**: Use GHCR for container builds
+  ```
+  org.demo:java-github-packages-demo:1.0.0
+  ```
 
 ---
 
-## 🎓 Summary
+## 10. Key Interview Notes
 
-Teaching GitHub Packages with GitHub Actions equips students to:
-
-* Automate builds and tests
-* Manage and distribute artifacts
-* Build secure and efficient CI/CD pipelines
-
-> 📘 **Skill Outcomes**: CI/CD, package management, GitHub Actions proficiency, security, artifact versioning.
+* `mvn deploy` publishes artifacts
+* `distributionManagement` defines target registry
+* `settings.xml` handles authentication
+* `GITHUB_TOKEN` is injected automatically
+* GitHub Actions permissions control package publishing
 
 ---
