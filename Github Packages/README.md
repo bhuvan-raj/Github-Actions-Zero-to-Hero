@@ -230,12 +230,11 @@ https://maven.pkg.github.com/Bubu/java-github-packages-demo
 ### `.github/workflows/maven-publish.yml`
 
 ```yaml
-name: Build and Publish Maven Package
+name: Publish Maven Package
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   publish:
@@ -246,18 +245,18 @@ jobs:
       packages: write
 
     steps:
-      - name: Checkout Source Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Java 17
-        uses: actions/setup-java@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
           cache: maven
 
-      - name: Build and Publish JAR
+      - name: Publish to GitHub Packages
         run: mvn clean deploy --settings settings.xml
+        env:
+         GITHUB_TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
 ```
 
 ---
