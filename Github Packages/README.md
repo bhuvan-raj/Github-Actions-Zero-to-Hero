@@ -225,6 +225,20 @@ https://maven.pkg.github.com/Bubu/java-github-packages-demo
 
 ---
 
+### 7. Create a PAT & Repository Secret 
+
+**Creating PAT**
+
+Profile - Settings- Developer Settings - Personal Access Token - Tokens Classic - New - Tokens(Classic) 
+- Give the token name
+- scope - Packages Read , Packages Write , Workflow
+  
+**Creating Repository Secrets**
+Repo - Settings - Secrets & Variables - New Repository Secret
+
+- Secret Name - Your Github Username
+- Secret - PAT
+
 ## 7. GitHub Actions Workflow
 
 ### `.github/workflows/maven-publish.yml`
