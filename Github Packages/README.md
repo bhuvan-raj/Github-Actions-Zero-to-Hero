@@ -214,7 +214,7 @@ https://maven.pkg.github.com/Bubu/java-github-packages-demo
         <server>
             <id>github</id>
             <username>your-username</username>
-            <password>${env.MAVEN_GITHUB_TOKEN}</password>
+            <password>${env.GITHUB_TOKEN}</password>
         </server>
     </servers>
 
