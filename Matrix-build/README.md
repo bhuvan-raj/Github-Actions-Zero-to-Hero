@@ -61,7 +61,7 @@ jobs:
           # Example: Run a specific set of "legacy" tests only on Java 8 on Ubuntu
           - os: ubuntu-latest
             java-version: 8
-            test-profile: legacy-tests
+            
 
           # Example: Ensure Java 21 always uses a specific Maven version if needed
           # - java-version: 21
