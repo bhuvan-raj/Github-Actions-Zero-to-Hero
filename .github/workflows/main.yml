@@ -1,4 +1,4 @@
-name: democi
+name: akhil
 on:
  workflow_dispatch:
 jobs:
