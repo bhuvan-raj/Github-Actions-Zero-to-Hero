@@ -1,0 +1,9 @@
+name: democi
+on:
+ workflow_dispatch:
+jobs:
+ demo:
+  runs-on: ubuntu-latest
+  steps:
+    - name: list the repo name
+      run: ${{ github.repository }}
