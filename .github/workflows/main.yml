@@ -6,4 +6,4 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: list the repo name
-      run: ${{ github.repository }}
+      run: echo " repo is ${{ github.repository }} "
