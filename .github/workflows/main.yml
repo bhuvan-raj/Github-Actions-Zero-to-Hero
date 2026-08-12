@@ -1,9 +1,42 @@
-name: akhil
-on:
- workflow_dispatch:
 jobs:
- demo:
-  runs-on: ubuntu-latest
-  steps:
-    - name: list the repo name
-      run: echo " repo is ${{ github.repository }} "
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run build script
+        run: npm run build
+
+  test:
+    needs: build # This job depends on 'build' completing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests
+        run: npm test
+
+  deploy_to_production:
+    needs: test # This job depends on 'test' completing
+    runs-on: ubuntu-latest
+    # ⭐ This job runs ONLY if the 'test' job succeeded AND the current branch is 'main'
+    if: success() && github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy
+        run: echo "🚀 Deploying to production environment..."
+
+  send_failure_notification:
+    needs: [build, test] # This job needs both 'build' and 'test' to have completed (regardless of their success)
+    runs-on: ubuntu-latest
+    # ⭐ This job runs ONLY if either 'build' OR 'test' failed
+    if: failure()
+    steps:
+      - name: Notify on Failure
+        run: echo "🔴 ALERT! Workflow failed in build or test stage. Please investigate."
+
+  cleanup_artifacts:
+    needs: [build, test, deploy_to_production, send_failure_notification] # Ensure all relevant previous jobs have finished
+    runs-on: ubuntu-latest
+    # ⭐ This job ALWAYS runs, regardless of success, failure, or cancellation of previous jobs
+    if: always()
+    steps:
+      - name: Perform Cleanup
+        run: echo "✅ Cleaning up temporary files and artifacts."
